@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script src="js/jquery-3.2.1.min.js" language="javascript"></script>
+<script type="text/javascript">
+ $(function(){
+  var $winH = $(window).height();//获取窗口高度
+  var $img = $("#show img");
+  var $imgH = parseInt($img.height()/2);//图片到一半的时候显示
+  var $srcDef = "img/pic1.jpg";
+  runing();//页面刚载入时判断要显示的图片
+  $(window).scroll(function(){
+   runing();//滚动刷新
+  })
+  function runing(){//遍历img
+   $img.each(function(i){
+    var $src = $img.eq(i).attr("original");//获取当前img URL地址
+    var $scroTop = $img.eq(i).offset();//获取图片位置
+    if($scroTop.top + $imgH >= $(window).scrollTop() && $(window).scrollTop() + $winH >= $scroTop.top + $imgH)//判断是否视窗位置
+    {
+     if($img.eq(i).attr("src") == $srcDef){
+      $img.eq(i).hide();
+     }
+     $img.eq(i).attr("src",function(){return $src}).fadeIn(300);//元素属性交换
+    }
+   })
+  }
+ })
+</script>
+<style type="text/css">
+ *{ border:0;}
+ a{ display:inline; float:left; margin:55px; background:#ccc; overflow:hidden; font-size:0;}
+</style>
+</head>
+<body>
+ <div id="show">
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic5.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic5.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic6.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic6.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic5.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic6.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic4.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic6.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic2.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic3.jpg" /></a>
+        <a href="#"><img src="img/pic1.jpg" width="160" height="160" original="img/pic6.jpg" /></a>
+    </div>
+</body>
+</html>
